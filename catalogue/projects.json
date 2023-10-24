@@ -1,0 +1,957 @@
+[
+  {
+    "id": "renewable-energy-growth",
+    "title": "Renewable energy & economic growth",
+    "number": "01",
+    "area": "Climate & development",
+    "question": "Can renewable investment fit into an account of how economies grow?",
+    "method_question": "What changes when an economic model gains a new explanatory variable?",
+    "substance": "The paper brings renewable-energy investment into a familiar growth question: conditional convergence. Rather than treating climate and growth as separate subjects, it asks how an augmented Solow framework changes when renewable investment and related proxies enter the model.",
+    "methods": "Cross-country data assembly, an augmented Solow specification, alternative proxies and robustness checks. The paper connects Penn World Table, World Bank, IRENA and educational-attainment data; the summary describes a 90-country sample.",
+    "bridge": "The contribution is the connection from theory to an observable quantity: deciding what should stand for renewable investment, adding it to a growth model, then asking how much the conclusion depends on that choice.",
+    "steps": [
+      "Start from a conditional-convergence model with physical and human capital.",
+      "Assemble the economic and renewable-energy measures and specify the added terms.",
+      "Compare short-run and long-run specifications, then examine alternative data and proxies.",
+      "Translate the argument into a paper, a short summary and an SRC presentation."
+    ],
+    "inspect": [
+      {
+        "label": "Start with the empirical strategy",
+        "file": "term-paper.pdf",
+        "page": 7,
+        "note": "The model and the role assigned to each variable."
+      },
+      {
+        "label": "Then inspect the evidence",
+        "file": "term-paper.pdf",
+        "page": 8,
+        "note": "Data sources, reported results and robustness discussion."
+      },
+      {
+        "label": "Read the short account",
+        "file": "research-summary.pdf",
+        "page": 2,
+        "note": "The research question and the author’s interpretation in one place."
+      }
+    ],
+    "scope": "The report presents estimated relationships, not a design that independently identifies a causal effect. Model fit and a significant coefficient do not by themselves establish that renewable investment causes faster growth. The raw merged data and estimation scripts are not included here.",
+    "credits": "Vaibhav Agarwal.",
+    "files": [
+      {
+        "name": "term-paper.pdf",
+        "label": "Research paper",
+        "start": 7,
+        "bytes": 457128,
+        "sha256": "7e27f4a233303c52235d68169c0bdbd7ab69509714a28e430a92c3773a9cb0f0",
+        "pages": 16,
+        "kind": "PDF"
+      },
+      {
+        "name": "research-summary.pdf",
+        "label": "Research summary",
+        "start": 2,
+        "bytes": 298068,
+        "sha256": "57695885cb829def1d3791cbab1afb3742cd2b4839ee8a24172b7719fb74f1a3",
+        "pages": 6,
+        "kind": "PDF"
+      },
+      {
+        "name": "research-presentation.pdf",
+        "label": "SRC presentation",
+        "start": 1,
+        "bytes": 776971,
+        "sha256": "3e933294e9b1636548d263520a01c72311703e2e921d0137001092d13ef71e71",
+        "pages": 12,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "growth.jpg",
+      "file": "term-paper.pdf",
+      "page": 11,
+      "caption": "Short-run comparisons from the research paper, p. 11.",
+      "alt": "Two original scatterplots relating growth and renewable-energy investment."
+    },
+    "related": [
+      "renewable-finance-geopolitics",
+      "replication-water-pricing"
+    ],
+    "method_tags": [
+      "Regression",
+      "Data assembly",
+      "Theory to variables"
+    ],
+    "substance_tags": [
+      "Climate",
+      "Development"
+    ],
+    "featured": true,
+    "short": "A growth-theory question carried through data, specification and research communication.",
+    "argument": "The paper draws a distinction between its short-run and longer-run specifications, and interprets the additional renewable-energy terms in relation to convergence. The interesting economic argument is therefore not simply “more investment is good”: it depends on the time horizon, the proxy and the model being estimated.",
+    "argument_source": {
+      "file": "term-paper.pdf",
+      "page": 3,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "health-and-livelihoods",
+    "title": "Health & livelihoods",
+    "number": "02",
+    "area": "Health & inequality",
+    "question": "How are household amenities related to the financial burden of illness?",
+    "method_question": "How do household conditions become variables that can be compared?",
+    "substance": "This group project studies health expenditure alongside cooking fuel, drainage and latrine facilities. Its substantive focus is access to everyday amenities and the costs of treatment, including the distinction between public and private care.",
+    "methods": "NSS 71st-round social-consumption health data, recoded household facilities, grouped descriptive tables and regression. The separate report, tables and regression note make it possible to inspect the stages of the analysis rather than only its final narrative.",
+    "bridge": "Access, exposure and spending are different concepts. The project is useful precisely because it has to decide how to operationalise each one before drawing comparisons between households.",
+    "steps": [
+      "Define the household-facility and health-expenditure measures.",
+      "Group the observations by facilities and treatment setting.",
+      "Inspect the descriptive tables before modelling the relationships.",
+      "Read the regression results against the measurement and sample choices."
+    ],
+    "inspect": [
+      {
+        "label": "Research question and data",
+        "file": "report.pdf",
+        "page": 1,
+        "note": "How household amenities motivate the analysis."
+      },
+      {
+        "label": "The descriptive evidence",
+        "file": "tables.pdf",
+        "page": 1,
+        "note": "A separate set of tables that can be inspected beside the narrative."
+      },
+      {
+        "label": "From groups to a model",
+        "file": "regression-analysis.pdf",
+        "page": 2,
+        "note": "Specification and discussion of the expenditure relationships."
+      }
+    ],
+    "scope": "The table set includes an explicitly unweighted disease-specific comparison, so the collection should not be described as uniformly survey-weighted. These are observational expenditure associations, not estimates of the causal health benefit of a facility. Unit-level data and analysis code are not bundled.",
+    "credits": "Group work. The regression note credits Neha, Vighnesh, Saranyan, Vaibhav and Vijayshree; original author lists remain in the documents.",
+    "files": [
+      {
+        "name": "report.pdf",
+        "label": "Research report",
+        "start": 1,
+        "bytes": 829950,
+        "sha256": "1b07689a55b529080d11214bcca2f15fbbd0f2b7791e0c084b3897257e3d8c01",
+        "pages": 9,
+        "kind": "PDF"
+      },
+      {
+        "name": "tables.pdf",
+        "label": "Descriptive tables",
+        "start": 1,
+        "bytes": 115153,
+        "sha256": "dbbb17068064783799c8550260054f8fac2162d6d53f7d567be41a2462e375fc",
+        "pages": 4,
+        "kind": "PDF"
+      },
+      {
+        "name": "regression-analysis.pdf",
+        "label": "Regression analysis",
+        "start": 2,
+        "bytes": 301611,
+        "sha256": "fc859e581864929732f7e5771dd90f1db2c267d3871837c27b7044f8f576444c",
+        "pages": 6,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "health.jpg",
+      "file": "regression-analysis.pdf",
+      "page": 5,
+      "caption": "Residual diagnostics and their discussion in the regression note, p. 5.",
+      "alt": "The original residual-versus-fitted plot and diagnostic discussion from the household expenditure analysis."
+    },
+    "related": [
+      "education-and-wages",
+      "public-distribution-scraping"
+    ],
+    "method_tags": [
+      "Microdata",
+      "Regression",
+      "Measurement"
+    ],
+    "substance_tags": [
+      "Health",
+      "Inequality"
+    ],
+    "featured": true,
+    "short": "Household conditions, treatment settings and expenditure, examined at the unit level.",
+    "argument": "The regression note reports lower expenditure for some households with less clean facilities, then raises access to treatment as an alternative explanation. That is a substantive result worth pausing over: lower spending cannot automatically be read as better health.",
+    "argument_source": {
+      "file": "regression-analysis.pdf",
+      "page": 4,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "data-visualization",
+    "title": "Making evidence legible",
+    "number": "03",
+    "area": "Visual communication",
+    "question": "Who can actually read a chart, and what does its design let them see?",
+    "method_question": "How do colour, shape and visual encoding change an explanation?",
+    "substance": "A poster on colour-blind-friendly visualisation sits beside a Python sketchbook of plotting experiments. Together they treat communication as part of analysis: an argument has to survive the way it is drawn and the way a reader perceives it.",
+    "methods": "Colour and marker experiments, statistical plots, maps and chart composition with matplotlib, NumPy, seaborn, Plotly and GeoPandas. The notebook is an exploratory visual lab, including synthetic and randomly generated examples, rather than a single empirical study.",
+    "bridge": "The common thread is not a particular plotting library. It is the effort to make differences, comparisons and uncertainty visible without asking every reader to perceive colour in the same way.",
+    "steps": [
+      "Identify the information a visual comparison needs to carry.",
+      "Explore redundant encodings such as shape as well as colour.",
+      "Try different statistical and spatial chart forms in Python.",
+      "Bring the design argument together in a compact research poster."
+    ],
+    "inspect": [
+      {
+        "label": "The full poster",
+        "file": "colorblind-friendly-visualization.pdf",
+        "page": 1,
+        "note": "The visual argument, examples and references on one sheet."
+      }
+    ],
+    "scope": "The notebook retains its original working cells and saved outputs, including incomplete experiments and errors. Several examples use invented data for design practice, not observed social outcomes. The browser reader does not execute the code or replay active Plotly output. The notebook’s saved execution metadata runs from April to May 2023.",
+    "credits": "Vaibhav Agarwal. Sources used for examples and figures remain credited in the original poster.",
+    "files": [
+      {
+        "name": "colorblind-friendly-visualization.pdf",
+        "label": "Visualisation poster",
+        "start": 1,
+        "bytes": 4425842,
+        "sha256": "b5ed9ffd7140e891bea2b7b9a56fbf028ee3c96eef8cfad36abb8d4b49835ffe",
+        "pages": 1,
+        "kind": "PDF"
+      },
+      {
+        "name": "python-visualization-lab.ipynb",
+        "label": "Python visualisation notebook",
+        "start": 1,
+        "bytes": 6110436,
+        "sha256": "f1d47489a1869f2ad3769bca3f2e49fff296c9ab7d3e1810b3b6ebe0e26b0c10",
+        "cells": 62,
+        "kind": "Notebook"
+      }
+    ],
+    "preview": {
+      "image": "visualisation.jpg",
+      "file": "colorblind-friendly-visualization.pdf",
+      "page": 1,
+      "caption": "The original colour-blind-friendly visualisation poster.",
+      "alt": "Two-column research poster combining visual accessibility examples, charts and explanations."
+    },
+    "related": [
+      "crime-data-categories",
+      "india-china-development"
+    ],
+    "method_tags": [
+      "Visualisation",
+      "Python",
+      "Accessibility"
+    ],
+    "substance_tags": [
+      "Communication",
+      "Measurement"
+    ],
+    "featured": true,
+    "short": "Visual accessibility as an analytical concern, with a poster and a Python sketchbook.",
+    "argument": "The poster asks how readers with different colour perception can still follow the same comparison. Its examples turn visual accessibility into a practical design problem, using chart form and additional encodings rather than treating a colour palette as the whole solution.",
+    "argument_source": {
+      "file": "colorblind-friendly-visualization.pdf",
+      "page": 1,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "public-distribution-scraping",
+    "title": "From a public webpage to a dataset",
+    "number": "04",
+    "area": "Public-service data",
+    "question": "How can an administrative report become material for analysis?",
+    "method_question": "What has to happen between an HTML table and usable numeric columns?",
+    "substance": "The notebook works with a block-level public-distribution report from Jharkhand. It makes a concrete piece of public-service information available in a more useful form: counts of households and beneficiaries, transactions, allocations and distribution.",
+    "methods": "Requests retrieves the page; BeautifulSoup selects a table; Python cleans row text; pandas supplies column labels and numerical conversion. A later section also explores an Excel workbook using openpyxl.",
+    "bridge": "This is an early data-collection pipeline. The useful work is not just acquiring a page, but imposing an explicit schema and handling formatting so that the figures can be analysed.",
+    "steps": [
+      "Request the administrative report and locate its HTML table.",
+      "Extract rows and remove whitespace and formatting characters.",
+      "Assign a twelve-column schema to the dataframe.",
+      "Convert comma-formatted numbers and missing values into numeric columns."
+    ],
+    "inspect": [],
+    "scope": "The scraper is specific to one page layout and selects a table by position. The later Excel section expects Bokaro.xlsx, which is not included. Live access and compatibility with the present website have not been tested; the saved code and outputs can be read without a request to the site.",
+    "credits": "From Vaibhav Agarwal’s coursework archive. The notebook does not contain a separate contributor statement.",
+    "files": [
+      {
+        "name": "jharkhand-pds-scraping.ipynb",
+        "label": "Public-distribution scraping notebook",
+        "start": 1,
+        "bytes": 57706,
+        "sha256": "da635ba99431633a6003605c00cbad5f6dc50e3dcbb9437a376ab99aea47210c",
+        "cells": 24,
+        "kind": "Notebook"
+      }
+    ],
+    "preview": {
+      "image": "pds.jpg",
+      "file": "jharkhand-pds-scraping.ipynb",
+      "page": 0,
+      "caption": "Original extraction and cleaning code from the notebook.",
+      "alt": "A typeset excerpt of the original public-distribution table extraction and cleaning code."
+    },
+    "related": [
+      "health-and-livelihoods",
+      "piotroski-stock-scoring"
+    ],
+    "method_tags": [
+      "Python",
+      "Web scraping",
+      "Data assembly"
+    ],
+    "substance_tags": [
+      "Public services"
+    ],
+    "featured": true,
+    "short": "A compact Python pipeline for extracting, cleaning and structuring administrative tables.",
+    "argument": "The concrete output is a labelled table with twelve fields, including household and beneficiary counts, grain allocation, grain distribution and a distribution percentage. The notebook makes the difference between information being publicly visible and being ready to analyse quite tangible.",
+    "argument_source": {
+      "file": "jharkhand-pds-scraping.ipynb",
+      "page": 10,
+      "kind": "cell"
+    }
+  },
+  {
+    "id": "crime-data-categories",
+    "title": "What a crime category can hide",
+    "number": "05",
+    "area": "Measurement & ethics",
+    "question": "What changes when a social event is recorded as a category?",
+    "method_question": "How do definitions, denominators and reporting affect a comparison?",
+    "substance": "This collaborative booklet examines the categories used in the crime data it studies and compares selected series for Assam, Gujarat, Kerala and Punjab. The important question is what those recorded categories can and cannot tell a reader.",
+    "methods": "Category review, four-state visual comparisons, word-frequency displays and colour-blind-friendly graphics. The closing sections explicitly discuss categorisation, reporting and the interpretation of administrative data.",
+    "bridge": "The work connects a substantive subject to the construction of its evidence. Choosing a denominator, a category or a reporting rule is part of the analysis, not a neutral step that precedes it.",
+    "steps": [
+      "Read the definitions and organisation of the categories used in the report.",
+      "Set out a four-state comparison and its geographic scope.",
+      "Use multiple visual forms to compare the recorded series.",
+      "Return to the limits of the categories and the reporting process."
+    ],
+    "inspect": [
+      {
+        "label": "How the comparison is set up",
+        "file": "crime-categorisation-report.pdf",
+        "page": 14,
+        "note": "The selected states and the visual approach."
+      },
+      {
+        "label": "Compare the visual evidence",
+        "file": "crime-categorisation-report.pdf",
+        "page": 16,
+        "note": "An example of the booklet’s comparative plots."
+      },
+      {
+        "label": "Read the measurement discussion",
+        "file": "crime-categorisation-report.pdf",
+        "page": 40,
+        "note": "The sections on categorisation and interpretation."
+      }
+    ],
+    "scope": "This is a historical coursework analysis of the sources cited in the booklet, not an account of current crime or current law. Its charts should not be used as a ranking of state safety. The original data and plotting scripts are not part of this selection.",
+    "credits": "Group work by Akshara, Chanakya, Hami and Vaibhav, as credited on the cover.",
+    "files": [
+      {
+        "name": "crime-categorisation-report.pdf",
+        "label": "Categorisation and interpretation booklet",
+        "start": 14,
+        "bytes": 1668702,
+        "sha256": "fbf6b0dde6c2d0999fbf7a2873b71ee6826ba4140df7e6dd295b841c2c23987a",
+        "pages": 62,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "crime.jpg",
+      "file": "crime-categorisation-report.pdf",
+      "page": 16,
+      "caption": "Comparative visual evidence from the group booklet, p. 16.",
+      "alt": "Two black-and-white small-multiple charts with descriptive text from the crime-data booklet."
+    },
+    "related": [
+      "data-visualization",
+      "rajasthan-suicide-data-story"
+    ],
+    "method_tags": [
+      "Measurement",
+      "Visualisation",
+      "Category review"
+    ],
+    "substance_tags": [
+      "Measurement",
+      "Public services"
+    ],
+    "featured": true,
+    "short": "A substantial group project connecting administrative categories to the claims made from them.",
+    "argument": "The booklet returns from its state comparisons to the categories and reporting processes that made those comparisons possible. Its central measurement argument is that a recorded count needs an account of what was counted, how it was classified and what did not enter the record.",
+    "argument_source": {
+      "file": "crime-categorisation-report.pdf",
+      "page": 40,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "india-china-development",
+    "title": "Two development paths, several measures",
+    "number": "06",
+    "area": "Comparative development",
+    "question": "What does development look like when GDP is not the only measure?",
+    "method_question": "How can a timeline and a set of charts complement each other?",
+    "substance": "A visual history of India and China sits alongside two comparative data assignments. The collection moves between life expectancy, fertility, schooling, sectoral employment and output, connecting development questions to more than one indicator.",
+    "methods": "Comparative time-series charts, linear-log regressions and a two-page historical timeline. The first assignment links social indicators to log GDP per capita; the second studies structural change and informal employment.",
+    "bridge": "The timeline provides context, while the plots make the comparisons explicit. Neither substitutes for the other: historical coincidence is not causal identification, and a single growth statistic is not a full account of development.",
+    "steps": [
+      "Place historical ideas and events alongside the development questions.",
+      "Compare social indicators over time using shared visual scales.",
+      "Examine sectoral output, employment and informal-work measures.",
+      "Use fitted relationships as descriptions, then return to historical context."
+    ],
+    "inspect": [
+      {
+        "label": "The historical timeline",
+        "file": "historical-timeline.pdf",
+        "page": 1,
+        "note": "A visual entry into the project."
+      },
+      {
+        "label": "Social indicators and GDP",
+        "file": "data-assignment-1.pdf",
+        "page": 6,
+        "note": "The first assignment’s fitted comparisons."
+      },
+      {
+        "label": "Structural transformation",
+        "file": "data-assignment-2.pdf",
+        "page": 9,
+        "note": "Sectoral shares shown together."
+      }
+    ],
+    "scope": "The historical annotations and fitted trends are descriptive. They do not isolate the effects of a particular event or policy. The first assignment is dated 5 September 2023; these are the supplied period documents, not newly updated comparisons.",
+    "credits": "Vaibhav Agarwal.",
+    "files": [
+      {
+        "name": "historical-timeline.pdf",
+        "label": "Historical timeline",
+        "start": 1,
+        "bytes": 1196186,
+        "sha256": "fd447529b89037febda5f4960f6e2dcbbaa5c6265b32c5ffb622b2fa713dedff",
+        "pages": 2,
+        "kind": "PDF"
+      },
+      {
+        "name": "data-assignment-1.pdf",
+        "label": "Social-indicator comparisons",
+        "start": 2,
+        "bytes": 326412,
+        "sha256": "49392a8978ef567096f6a98f326d6d7f919df8f85faf1b8595f556eda7b54680",
+        "pages": 10,
+        "kind": "PDF"
+      },
+      {
+        "name": "data-assignment-2.pdf",
+        "label": "Structural-change comparisons",
+        "start": 3,
+        "bytes": 993838,
+        "sha256": "24ba79e77832321aedf68e8e83d1a8b6dd7ed01c3b0d77e9c2972929b4f6ff70",
+        "pages": 24,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "timeline.jpg",
+      "file": "historical-timeline.pdf",
+      "page": 1,
+      "caption": "The first sheet of the original two-page historical timeline.",
+      "alt": "Black-and-white historical timeline with illustrations, dated events and text across a wide page."
+    },
+    "related": [
+      "education-and-wages",
+      "renewable-energy-growth"
+    ],
+    "method_tags": [
+      "Visualisation",
+      "Regression",
+      "Comparative analysis"
+    ],
+    "substance_tags": [
+      "Development"
+    ],
+    "featured": true,
+    "short": "A designed historical timeline paired with comparative social and economic indicators.",
+    "argument": "The assignments put social indicators alongside GDP and then separate output shares from employment shares. Read together with the timeline, they make development a question about several changing relationships rather than one national growth curve.",
+    "argument_source": {
+      "file": "data-assignment-2.pdf",
+      "page": 9,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "replication-water-pricing",
+    "title": "Rebuilding the evidence on water pricing",
+    "number": "07",
+    "area": "Incentives & conservation",
+    "question": "When is a water-saving practice also an economic incentive?",
+    "method_question": "What does it take to reconstruct a published table and its meaning?",
+    "substance": "This replication exercise works through Tables 1–8 of Chakravorty, Dar and Emerick’s 2019 study, Inefficient water pricing and incentives for conservation. The substantive problem is the relationship between irrigation incentives and a water-saving practice.",
+    "methods": "Table-by-table replication, treatment interactions, fixed effects and village-clustered standard errors as presented in the replication report. The project distinguishes the study design from the interpretation of individual coefficients.",
+    "bridge": "Replication is a different kind of contribution from proposing a new model. It requires tracing what a published result actually rests on, and checking that the output has been matched to the right question.",
+    "steps": [
+      "Reconstruct the original study’s sampling and treatment design.",
+      "Work through eight tables and identify the outcomes and interactions.",
+      "Read coefficients together with the relevant uncertainty and specification.",
+      "Document the relationship between the replication package and the paper’s tables."
+    ],
+    "inspect": [
+      {
+        "label": "Understand the study design",
+        "file": "replication-paper.pdf",
+        "page": 5,
+        "note": "The report’s account of sampling and treatment assignment."
+      },
+      {
+        "label": "Inspect the first reproduced table",
+        "file": "replication-paper.pdf",
+        "page": 6,
+        "note": "Water use, treatment interactions and interpretation."
+      },
+      {
+        "label": "Read the replication note",
+        "file": "replication-paper.pdf",
+        "page": 16,
+        "note": "A practical reflection on matching outputs to published tables."
+      }
+    ],
+    "scope": "The underlying experiment was conducted by the original authors, not by the portfolio author. This folder contains the replication report, not the replication data or executable scripts. Reproduction of its estimates has not been rerun for this portfolio.",
+    "credits": "Replication report by Vaibhav Agarwal. Original research: Ujjayant Chakravorty, Manzoor H. Dar and Kyle Emerick (2019).",
+    "files": [
+      {
+        "name": "replication-paper.pdf",
+        "label": "Replication report",
+        "start": 5,
+        "bytes": 151116,
+        "sha256": "d5117f22423e02276106649a8d87d546e8e28cf9c0c2d10699ec12bcfb727fe9",
+        "pages": 18,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "replication.jpg",
+      "file": "replication-paper.pdf",
+      "page": 6,
+      "caption": "The first replicated table and its interpretation, p. 6.",
+      "alt": "A regression table showing water-use outcomes and treatment interactions."
+    },
+    "related": [
+      "renewable-energy-growth",
+      "education-and-wages"
+    ],
+    "method_tags": [
+      "Replication",
+      "Regression",
+      "Study design"
+    ],
+    "substance_tags": [
+      "Resources",
+      "Development"
+    ],
+    "featured": false,
+    "short": "Eight published tables approached as an exercise in empirical reasoning, not just table production.",
+    "argument": "The report separates an overall treatment comparison from the interaction with volumetric pricing. That distinction connects the table to the economic question: introducing a practice and changing the incentive to use it are not the same intervention.",
+    "argument_source": {
+      "file": "replication-paper.pdf",
+      "page": 6,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "education-and-wages",
+    "title": "Education does not meet one labour market",
+    "number": "08",
+    "area": "Labour & inequality",
+    "question": "Does the education–earnings relationship differ across kinds of work?",
+    "method_question": "What becomes visible when a regression is split by employment setting?",
+    "substance": "The paper studies education and weekly earnings among salaried, self-employed and casual workers, with attention to rural–urban differences. Its central contribution to the portfolio is the refusal to treat one average relationship as the whole labour-market story.",
+    "methods": "The report uses PLFS 2018–19 data, education categories, employment groups, regression controls and interaction terms. Maps and grouped charts accompany the regression tables, and the methods section describes pandas-based variable preparation.",
+    "bridge": "The economic question is heterogeneous returns. The methodological task is to define comparable groups, select a baseline and keep the interpretation of coefficients aligned with those choices.",
+    "steps": [
+      "Define earnings, education categories and employment status.",
+      "Prepare the analytic sample and specify control variables.",
+      "Compare employment groups and investigate rural–urban interactions.",
+      "Read the regression tables beside the maps and descriptive charts."
+    ],
+    "inspect": [
+      {
+        "label": "Data and method",
+        "file": "computational-economics-paper.pdf",
+        "page": 6,
+        "note": "The PLFS data and variable-preparation choices."
+      },
+      {
+        "label": "See the grouped visual comparison",
+        "file": "computational-economics-paper.pdf",
+        "page": 11,
+        "note": "Education and occupation in the descriptive results."
+      },
+      {
+        "label": "Inspect the regression tables",
+        "file": "computational-economics-paper.pdf",
+        "page": 16,
+        "note": "The model outputs that support the discussion."
+      }
+    ],
+    "scope": "The supplied artifact is a research paper; its analysis code and source microdata are not bundled. Group differences and regression associations do not by themselves identify causal returns to schooling. Sample restrictions and coding choices matter for interpretation.",
+    "credits": "Vaibhav Agarwal.",
+    "files": [
+      {
+        "name": "computational-economics-paper.pdf",
+        "label": "Computational economics paper",
+        "start": 6,
+        "bytes": 1104039,
+        "sha256": "bb579ad56a61c4a7a2e63e3c51a72e69ea0e08d2eea1fa6f2b2536266256e7f9",
+        "pages": 23,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "education.jpg",
+      "file": "computational-economics-paper.pdf",
+      "page": 11,
+      "caption": "A grouped comparison from the education-and-wages paper, p. 11.",
+      "alt": "Black-and-white grouped bar chart comparing earnings across education levels and work categories."
+    },
+    "related": [
+      "health-and-livelihoods",
+      "india-china-development"
+    ],
+    "method_tags": [
+      "Microdata",
+      "Regression",
+      "Visualisation"
+    ],
+    "substance_tags": [
+      "Labour",
+      "Inequality"
+    ],
+    "featured": false,
+    "short": "Employment groups and rural–urban differences rather than a single return-to-education average.",
+    "argument": "The paper reports different education–earnings patterns across salaried, self-employed and casual work, then examines rural–urban differences. The substantive argument is that the labour-market setting changes how an education coefficient should be interpreted.",
+    "argument_source": {
+      "file": "computational-economics-paper.pdf",
+      "page": 15,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "renewable-finance-geopolitics",
+    "title": "Following renewable-energy finance",
+    "number": "09",
+    "area": "Climate & political economy",
+    "question": "Who finances renewable projects, and how are those flows organised?",
+    "method_question": "What can disaggregating loans, grants and equity reveal?",
+    "substance": "The paper asks how the geography and form of renewable-energy finance relate to development. It brings together funding instruments, recipient income groups and regional comparisons, with a focus on India, China and African countries.",
+    "methods": "IRENA investment data, World Bank income classifications and GDP measures; data wrangling, maps, grouped tables and comparisons of loans, grants and equity. The unit of comparison and the financing instrument are kept visible.",
+    "bridge": "The strongest methodological move is to separate “investment” into types of funding and relationships between lenders and recipients. Describing these flows is a different task from establishing the motives behind them.",
+    "steps": [
+      "Combine financing records with country and income-group information.",
+      "Distinguish loans, grants and equity instead of pooling every instrument.",
+      "Map the origin and destination of the recorded financing.",
+      "Compare regions and income groups before interpreting the patterns."
+    ],
+    "inspect": [
+      {
+        "label": "Research design and sources",
+        "file": "final-paper.pdf",
+        "page": 4,
+        "note": "The paper’s data and comparative approach."
+      },
+      {
+        "label": "The spatial comparison",
+        "file": "final-paper.pdf",
+        "page": 5,
+        "note": "Maps of the financing patterns."
+      },
+      {
+        "label": "The concluding discussion",
+        "file": "final-paper.pdf",
+        "page": 12,
+        "note": "Read the interpretation together with its stated need for further work."
+      }
+    ],
+    "scope": "The source paper’s geopolitical interpretations are arguments, not demonstrated motives. The portfolio presents the data workflow without endorsing those interpretations. The paper is dated 29 September 2023 and uses the historical data identified in its references; it is not a current financing assessment.",
+    "credits": "Vaibhav Agarwal.",
+    "files": [
+      {
+        "name": "final-paper.pdf",
+        "label": "Renewable-finance paper",
+        "start": 4,
+        "bytes": 941335,
+        "sha256": "68819082b3da12b7d0505038a6e646b867f9c4373b1290532eaf32c308ab8872",
+        "pages": 15,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "finance.jpg",
+      "file": "final-paper.pdf",
+      "page": 5,
+      "caption": "The original spatial comparison in the finance paper, p. 5.",
+      "alt": "Two maps from the original renewable-finance research paper."
+    },
+    "related": [
+      "renewable-energy-growth",
+      "ccus-india"
+    ],
+    "method_tags": [
+      "Data assembly",
+      "Visualisation",
+      "Comparative analysis"
+    ],
+    "substance_tags": [
+      "Climate",
+      "Development"
+    ],
+    "featured": false,
+    "short": "Funding instruments, locations and income groups used to structure a political-economy question.",
+    "argument": "The analysis decomposes financing into loans, grants and equity and examines where funds originate and where projects are located. It also explicitly leaves the proposed connection between the observed patterns and geopolitical motives as a question requiring further work.",
+    "argument_source": {
+      "file": "final-paper.pdf",
+      "page": 12,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "piotroski-stock-scoring",
+    "title": "Turning a financial idea into rules",
+    "number": "10",
+    "area": "Economic ideas in code",
+    "question": "How can a financial framework become an inspectable sequence of calculations?",
+    "method_question": "Where do data retrieval, accounting definitions and program logic meet?",
+    "substance": "This group notebook translates a Piotroski-style financial scoring idea into Python. It gives an early example of turning a framework learned in economics and finance into explicit calculations that another reader can follow.",
+    "methods": "yfinance retrieves company statements; pandas-style positional indexing extracts entries; ratios and comparisons contribute to an accumulated score. Markdown explanations sit beside the corresponding Python calculations.",
+    "bridge": "The interesting transition is from an informal judgement to a rule. Once that rule is written in code, its definitions, assumptions and implementation become visible and open to checking.",
+    "steps": [
+      "Choose a ticker and retrieve its financial statements.",
+      "Extract accounting entries and construct ratios.",
+      "Apply a sequence of binary conditions to an accumulated score.",
+      "Print the result alongside explanations of the individual calculations."
+    ],
+    "inspect": [],
+    "scope": "This is a coursework implementation, not a validated canonical F-score or investment tool. Positional statement indexing is fragile; the notebook also reuses the same average-assets expression for both periods. Those implementation choices are preserved for inspection, not silently presented as verified finance logic. Live API execution has not been tested.",
+    "credits": "Group work by Vaibhav, Hami and Abhinav, as credited in the first notebook cell.",
+    "files": [
+      {
+        "name": "piotroski-score.ipynb",
+        "label": "Financial-scoring notebook",
+        "start": 1,
+        "bytes": 35821,
+        "sha256": "e5e0e4775086670549b7dcd703fa6ccd5adc52154cf49cf0b9fa97ed20d2f88e",
+        "cells": 29,
+        "kind": "Notebook"
+      }
+    ],
+    "preview": {
+      "image": "scoring.jpg",
+      "file": "piotroski-score.ipynb",
+      "page": 0,
+      "caption": "Original cash-flow comparison code from the group notebook.",
+      "alt": "A typeset excerpt of a cash-flow rule and score increment from the original Python notebook."
+    },
+    "related": [
+      "public-distribution-scraping",
+      "replication-water-pricing"
+    ],
+    "method_tags": [
+      "Python",
+      "Rule-based scoring",
+      "Data retrieval"
+    ],
+    "substance_tags": [
+      "Finance"
+    ],
+    "featured": false,
+    "short": "Accounting concepts made explicit as data retrieval, ratios and conditional Python logic.",
+    "argument": "The notebook places explanations of accounting concepts beside the exact conditions that increment the score. This is the part to inspect: the financial judgement has been decomposed into smaller rules, so disagreements can be traced to a definition, a data entry or a calculation.",
+    "argument_source": {
+      "file": "piotroski-score.ipynb",
+      "page": 16,
+      "kind": "cell"
+    }
+  },
+  {
+    "id": "ccus-india",
+    "title": "Carbon capture, beyond the technology",
+    "number": "11",
+    "area": "Technology & institutions",
+    "question": "What would a technological proposal need to work in a specific setting?",
+    "method_question": "How can engineering, environmental and economic evidence be read together?",
+    "substance": "The report and presentation examine carbon capture, utilisation and storage in the context of Indian industry. They place the technical processes beside costs, environmental questions, social implications and institutional conditions.",
+    "methods": "Interdisciplinary literature synthesis, technology comparison, emissions graphics and case studies. The project links a substantial written review to a designed presentation rather than treating the slides as a replacement for the underlying work.",
+    "bridge": "The analytical move is to distinguish technical possibility from contextual feasibility. A technology has to be understood as a system with costs, risks and institutions, not only as a diagram of a process.",
+    "steps": [
+      "Set out the industrial-emissions problem as described in the source literature.",
+      "Explain capture, utilisation and storage pathways.",
+      "Compare environmental, social and economic considerations.",
+      "Use cases and the India-specific discussion to assess the proposal’s conditions."
+    ],
+    "inspect": [
+      {
+        "label": "Objectives and scope",
+        "file": "final-report.pdf",
+        "page": 2,
+        "note": "The questions framing the review."
+      },
+      {
+        "label": "Read the case studies",
+        "file": "final-report.pdf",
+        "page": 27,
+        "note": "The transition from technologies to concrete settings."
+      },
+      {
+        "label": "The synthesis",
+        "file": "final-report.pdf",
+        "page": 29,
+        "note": "Results and discussion of the review."
+      },
+      {
+        "label": "Browse the presentation",
+        "file": "presentation.pdf",
+        "page": 1,
+        "note": "The same project translated into a visual explanation."
+      }
+    ],
+    "scope": "This is a literature-based review dated 28 April 2023, not a plant simulation, engineering validation or updated inventory of operating projects. Third-party figures retain their source credits in the documents.",
+    "credits": "Group work by Abhinav Saxena and Vaibhav Agarwal.",
+    "files": [
+      {
+        "name": "final-report.pdf",
+        "label": "Interdisciplinary report",
+        "start": 2,
+        "bytes": 7674367,
+        "sha256": "5b5ceb7a9fbfd2a75e4d31d71fe66bcf3d55d954cd1695595692c411ddf98e21",
+        "pages": 32,
+        "kind": "PDF"
+      },
+      {
+        "name": "presentation.pdf",
+        "label": "Visual presentation",
+        "start": 1,
+        "bytes": 3499059,
+        "sha256": "87c1625e984ffd4e7dd1bab78a967993f1894da0c39c426fafe927f88bc35da4",
+        "pages": 43,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "ccus.jpg",
+      "file": "presentation.pdf",
+      "page": 1,
+      "caption": "The original CCUS presentation cover.",
+      "alt": "Dark presentation cover with an illustrated industrial landscape and carbon-capture title."
+    },
+    "related": [
+      "renewable-energy-growth",
+      "renewable-finance-geopolitics"
+    ],
+    "method_tags": [
+      "Evidence synthesis",
+      "Comparative analysis",
+      "Visualisation"
+    ],
+    "substance_tags": [
+      "Climate",
+      "Technology"
+    ],
+    "featured": false,
+    "short": "A technical proposal examined through the economic and institutional conditions around it.",
+    "argument": "The review distinguishes a possible technical pathway from the conditions needed to apply it in India. Its concluding discussion brings costs, research needs and environmental and social considerations back into the same assessment instead of treating capture technology alone as the answer.",
+    "argument_source": {
+      "file": "final-report.pdf",
+      "page": 29,
+      "kind": "page"
+    }
+  },
+  {
+    "id": "rajasthan-suicide-data-story",
+    "title": "Reading a pattern without overstating it",
+    "number": "12",
+    "area": "Social data & interpretation",
+    "question": "What can a reported social indicator explain, and what might it leave out?",
+    "method_question": "How do a map, a comparison table and a narrative change the same question?",
+    "substance": "This data story explores a reported pattern in Rajasthan using comparative indicators, maps and an extended narrative. It is included as a piece of visual and interpretive work, with the question of measurement kept separate from causal explanation.",
+    "methods": "Comparative tables, mapping, visual storytelling and literature-based interpretation. The document combines several forms of evidence rather than relying on one figure to carry the entire explanation.",
+    "bridge": "The useful connection is between an intriguing pattern and the discipline of interpreting it. A narrative may suggest explanations; aggregate comparisons alone do not establish why people experience an outcome.",
+    "steps": [
+      "Identify the reported pattern that motivates the question.",
+      "Set it beside comparative demographic and social indicators.",
+      "Use maps and tables to make the geographic comparison inspectable.",
+      "Distinguish possible explanations from what the aggregate evidence establishes."
+    ],
+    "inspect": [
+      {
+        "label": "Read the framing",
+        "file": "data-story.pdf",
+        "page": 2,
+        "note": "The author’s original research question and proposed interpretation."
+      },
+      {
+        "label": "Inspect the comparison",
+        "file": "data-story.pdf",
+        "page": 4,
+        "note": "One of the tables used to build the narrative."
+      }
+    ],
+    "scope": "The original paper’s proposed cultural explanation should be read as exploratory, not as a verified protective mechanism or an individual-level conclusion. Reporting differences, omitted factors and aggregate-to-individual inference remain important alternatives. This is not clinical evidence.",
+    "credits": "Vaibhav Agarwal.",
+    "files": [
+      {
+        "name": "data-story.pdf",
+        "label": "Visual data story",
+        "start": 2,
+        "bytes": 4143138,
+        "sha256": "f521d12f540036d1ec70b784de8756212704c98a597b5d544e1a8677153dd758",
+        "pages": 16,
+        "kind": "PDF"
+      }
+    ],
+    "preview": {
+      "image": "rajasthan.jpg",
+      "file": "data-story.pdf",
+      "page": 4,
+      "caption": "A comparison table from the original data story, p. 4.",
+      "alt": "An original comparison table from the Rajasthan data-story document."
+    },
+    "related": [
+      "crime-data-categories",
+      "data-visualization"
+    ],
+    "method_tags": [
+      "Visualisation",
+      "Measurement",
+      "Comparative analysis"
+    ],
+    "substance_tags": [
+      "Measurement",
+      "Health"
+    ],
+    "featured": false,
+    "short": "A visual data story presented together with the limits of aggregate social explanation.",
+    "argument": "The paper moves from a reported pattern to possible social explanations. Its place in the portfolio is as a worked example of visual argument-building, with an important distinction preserved: a proposed explanation in a narrative is not a demonstrated individual-level mechanism.",
+    "argument_source": {
+      "file": "data-story.pdf",
+      "page": 2,
+      "kind": "page"
+    }
+  }
+]
