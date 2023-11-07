@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From a public webpage to a dataset / Notebook · Vaibhav Agarwal</title><meta name="description" content="The original notebook, readable without execution.">
+<meta name="theme-color" content="#f8f7f3"><meta name="color-scheme" content="light">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/portfolio.css"><script src="../../assets/portfolio.js" defer></script>
+</head><body><a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../index.html"><span class="brand-name">Vaibhav Agarwal</span><span class="brand-year">2020–2023</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html#work">Work</a><a href="../../index.html#gallery">Gallery</a><a class="nav-atlas" href="../../index.html#connections">Connections</a><a href="../../index.html#about">About</a></nav></div></header><main id="main" class="wrap"><div class="reader-header"><p class="breadcrumb"><a href="index.html">← From a public webpage to a dataset</a></p><p class="eyebrow">Original notebook / 24 cells</p><h1>Inside the work.</h1><p>This reader preserves the original cell order, code, stored text and PNG outputs. It does not run code or replay active HTML and Plotly outputs. Saved errors remain available to inspect. For the complete notebook, including interactive outputs, use the file below.</p><p><a href="jharkhand-pds-scraping.ipynb" download="">Download the original .ipynb</a></p><div class="reader-controls js-only js-flex"><button data-reader-toggle="code" aria-pressed="true">Hide code</button><button data-reader-toggle="output" aria-pressed="true">Hide saved outputs</button></div></div><div class="reader"><section class="notebook-cell" id="cell-1"><div class="cell-label"><a href="#cell-1">CELL 01</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">from bs4 import BeautifulSoup
+import requests
+res = requests.get(&#x27;https://aahar.jharkhand.gov.in/district-monthly-reports/nfsa-block-reports/MQ%3D%3D/MQ%3D%3D/OA%3D%3D/MQ%3D%3D&#x27;)</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-2"><div class="cell-label"><a href="#cell-2">CELL 02</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">res.status_code</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>200</pre></details></div></div></section><section class="notebook-cell" id="cell-3"><div class="cell-label"><a href="#cell-3">CELL 03</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">soup = BeautifulSoup(res.text,&#x27;html.parser&#x27;)
+</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-4"><div class="cell-label"><a href="#cell-4">CELL 04</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">table=soup.find_all(&#x27;table&#x27;)[1]</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-5"><div class="cell-label"><a href="#cell-5">CELL 05</a><br>PYTHON</div><div class="cell-body"><pre class="code-source"></pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-6"><div class="cell-label"><a href="#cell-6">CELL 06</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">rows=table.findChildren([&#x27;tr&#x27;])</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-7"><div class="cell-label"><a href="#cell-7">CELL 07</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">row1  = []
+for r in rows:
+    cells = r.find_all([&#x27;span&#x27;,&#x27;th&#x27;,&#x27;td&#x27;])
+    row1 += [(&#x27;\t&#x27;.join(c.string for c in cells if c.string))]
+    #print(&#x27;\t&#x27;.join(c.string for c in cells if c.string))
+    #print(&#x27;00000000000000000&#x27;)
+    #print(row1)</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-8"><div class="cell-label"><a href="#cell-8">CELL 08</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">
+import numpy as np 
+
+
+for j in range(len(row1)):
+    row1[j] = row1[j].split(&#x27;\t&#x27;)
+    for i in range(len(row1[j])):
+        row1[j][i] = row1[j][i].replace(&#x27;\r&#x27;,&#x27;&#x27;)
+        row1[j][i] = row1[j][i].replace(&#x27;\n&#x27;,&#x27;&#x27;)
+    
+</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-9"><div class="cell-label"><a href="#cell-9">CELL 09</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">import pandas as pd
+df2 = pd.DataFrame(row1)
+print(df2)</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>                   0                      1          2            3   \
+0   District : BOKARO                   None       None         None   
+1               Sl No             Block Name  HHD Count  Transaction   
+2                                       None       None         None   
+3                   1                  BERMO         53         9595   
+4                   2          CHANDANKIYARI        236        39358   
+5                   3            CHANDRAPURA         83        19452   
+6                   4                   CHAS        288        58037   
+7                   5                  GOMIA        199        36055   
+8                   6                JARIDIH         87        15784   
+9                   7                 KASMAR         76        16459   
+10                  8                NAWADIH        106        24855   
+11                  9               PETERWAR        114        20462   
+12                 10  CHAS NAGAR PALIKA(MN)         92        16088   
+13                 11            Phusro (NA)         67         7883   
+14                 12  Bokaro Steel City(TA)        222        26094   
+15              Total                   1623     290122       263849   
+
+              4             5                 6                  7   \
+0           None          None              None               None   
+1      Allocated   Distributed  Total Allocation  Total Distributed   
+2           None          None              None               None   
+3           8501    222,945.00              0.00         202605.000   
+4          36710    975,320.00              0.00         929999.000   
+5          17270    270,006.00        180,004.00         246481.000   
+6          53249  1,159,700.00        138,990.00        1096477.000   
+7          34021    864,825.00         49,830.00         825819.000   
+8          14769    374,380.00              0.00         356640.000   
+9          15566    403,935.00              0.00         387815.000   
+10         23973    641,865.00              0.00         624765.000   
+11         18742    494,795.00              0.00         461540.000   
+12         14562    218,994.00        145,996.00         203148.000   
+13          7009    119,874.00         79,916.00         108201.000   
+14         19477    314,790.00        209,860.00         248239.000   
+15  6,061,429.00    804,596.00           5691729             709400   
+
+                  8        9            10     11  
+0               None     None         None   None  
+1   Distribution (%)     None         None   None  
+2               None     None         None   None  
+3             10.000   222945   202605.000  90.88  
+4             26.000   975320   929999.000  95.35  
+5         164284.000   450010   246481.000  54.77  
+6         125662.000  1298690  1096477.000  84.43  
+7          46736.000   914655   825819.000  90.29  
+8              0.000   374380   356640.000  95.26  
+9              0.000   403935   387815.000  96.01  
+10             0.000   641865   624765.000  97.34  
+11             0.000   494795   461540.000  93.28  
+12        135422.000   364990   203148.000  55.66  
+13         72034.000   199790   108201.000  54.16  
+14        165226.000   524650   248239.000  47.32  
+15           6866025  6401129        93.23   None  
+</pre></details></div></div></section><section class="notebook-cell" id="cell-10"><div class="cell-label"><a href="#cell-10">CELL 10</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">from IPython.display import display
+#df2.drop(index=df2.index[0])
+df2 = df2.drop(2)
+
+#df2.columns = df2.iloc[1]
+df2 = df2.drop(1)
+df2 = df2.drop(0)
+df2.columns = [&quot;Sl No&quot;, &quot;Block Name&quot;, &quot;HHD Count&quot;, &quot;Beneficiary Count (PH Card+AAY Card)&quot;,&quot;Transaction&quot;, &quot;Rice Allocated(kg)&quot;, &quot;Wheat Allocated(kg)&quot;, &quot;Rice Distributed(kg)&quot;,&quot;Wheat Distributed(kg)&quot;, &quot;Total Allocation&quot;, &quot;Total Distributed&quot;, &quot;Distribution %&quot;]
+display(df2)</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>    Sl No             Block Name HHD Count  \
+3       1                  BERMO        53   
+4       2          CHANDANKIYARI       236   
+5       3            CHANDRAPURA        83   
+6       4                   CHAS       288   
+7       5                  GOMIA       199   
+8       6                JARIDIH        87   
+9       7                 KASMAR        76   
+10      8                NAWADIH       106   
+11      9               PETERWAR       114   
+12     10  CHAS NAGAR PALIKA(MN)        92   
+13     11            Phusro (NA)        67   
+14     12  Bokaro Steel City(TA)       222   
+15  Total                   1623    290122   
+
+   Beneficiary Count (PH Card+AAY Card)   Transaction Rice Allocated(kg)  \
+3                                  9595          8501         222,945.00   
+4                                 39358         36710         975,320.00   
+5                                 19452         17270         270,006.00   
+6                                 58037         53249       1,159,700.00   
+7                                 36055         34021         864,825.00   
+8                                 15784         14769         374,380.00   
+9                                 16459         15566         403,935.00   
+10                                24855         23973         641,865.00   
+11                                20462         18742         494,795.00   
+12                                16088         14562         218,994.00   
+13                                 7883          7009         119,874.00   
+14                                26094         19477         314,790.00   
+15                               263849  6,061,429.00         804,596.00   
+
+   Wheat Allocated(kg) Rice Distributed(kg) Wheat Distributed(kg)  \
+3                 0.00           202605.000                10.000   
+4                 0.00           929999.000                26.000   
+5           180,004.00           246481.000            164284.000   
+6           138,990.00          1096477.000            125662.000   
+7            49,830.00           825819.000             46736.000   
+8                 0.00           356640.000                 0.000   
+9                 0.00           387815.000                 0.000   
+10                0.00           624765.000                 0.000   
+11                0.00           461540.000                 0.000   
+12          145,996.00           203148.000            135422.000   
+13           79,916.00           108201.000             72034.000   
+14          209,860.00           248239.000            165226.000   
+15             5691729               709400               6866025   
+
+   Total Allocation Total Distributed Distribution %  
+3            222945        202605.000          90.88  
+4            975320        929999.000          95.35  
+5            450010        246481.000          54.77  
+6           1298690       1096477.000          84.43  
+7            914655        825819.000          90.29  
+8            374380        356640.000          95.26  
+9            403935        387815.000          96.01  
+10           641865        624765.000          97.34  
+11           494795        461540.000          93.28  
+12           364990        203148.000          55.66  
+13           199790        108201.000          54.16  
+14           524650        248239.000          47.32  
+15          6401129             93.23           None  </pre></details></div></div></section><section class="notebook-cell" id="cell-11"><div class="cell-label"><a href="#cell-11">CELL 11</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">display(df2.iloc[2])</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>1
+Sl No                          3
+Block Name           CHANDRAPURA
+HHD Count                     83
+Transaction                19452
+Allocated                  17270
+Distributed           270,006.00
+Total Allocation      180,004.00
+Total Distributed     246481.000
+Distribution (%)      164284.000
+NaN                       450010
+NaN                   246481.000
+NaN                        54.77
+Name: 5, dtype: object</pre></details></div></div></section><section class="notebook-cell" id="cell-12"><div class="cell-label"><a href="#cell-12">CELL 12</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">def converter(val):
+    if type(val)==str:
+        val = val.replace(&#x27;,&#x27;,&#x27;&#x27;)
+    if val == None:
+        return float(&#x27;nan&#x27;)
+    else:
+        return float(val)
+    
+df2[&#x27;HHD Count&#x27;] = df2[&#x27;HHD Count&#x27;].apply(converter)
+df2[&#x27;Beneficiary Count (PH Card+AAY Card)&#x27;] = df2[&#x27;Beneficiary Count (PH Card+AAY Card)&#x27;].apply(converter)
+df2[&#x27;Transaction&#x27;] = df2[&#x27;Transaction&#x27;].apply(converter)
+df2[&#x27;Rice Allocated(kg)&#x27;] = df2[&#x27;Rice Allocated(kg)&#x27;].apply(converter)
+df2[&#x27;Wheat Allocated(kg)&#x27;] = df2[&#x27;Wheat Allocated(kg)&#x27;].apply(converter)
+df2[&#x27;Rice Distributed(kg)&#x27;] = df2[&#x27;Rice Distributed(kg)&#x27;].apply(converter)
+df2[&#x27;Wheat Distributed(kg)&#x27;] = df2[&#x27;Wheat Distributed(kg)&#x27;].apply(converter)
+df2[&#x27;Total Allocation&#x27;] = df2[&#x27;Total Allocation&#x27;].apply(converter)
+df2[&#x27;Total Distributed&#x27;] = df2[&#x27;Total Distributed&#x27;].apply(converter)
+df2[&#x27;Distribution %&#x27;] = df2[&#x27;Distribution %&#x27;].apply(converter)</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-13"><div class="cell-label"><a href="#cell-13">CELL 13</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">df2</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>    Sl No             Block Name  HHD Count  \
+3       1                  BERMO       53.0   
+4       2          CHANDANKIYARI      236.0   
+5       3            CHANDRAPURA       83.0   
+6       4                   CHAS      288.0   
+7       5                  GOMIA      199.0   
+8       6                JARIDIH       87.0   
+9       7                 KASMAR       76.0   
+10      8                NAWADIH      106.0   
+11      9               PETERWAR      114.0   
+12     10  CHAS NAGAR PALIKA(MN)       92.0   
+13     11            Phusro (NA)       67.0   
+14     12  Bokaro Steel City(TA)      222.0   
+15  Total                   1623   290122.0   
+
+    Beneficiary Count (PH Card+AAY Card)  Transaction  Rice Allocated(kg)  \
+3                                 9595.0       8501.0            222945.0   
+4                                39358.0      36710.0            975320.0   
+5                                19452.0      17270.0            270006.0   
+6                                58037.0      53249.0           1159700.0   
+7                                36055.0      34021.0            864825.0   
+8                                15784.0      14769.0            374380.0   
+9                                16459.0      15566.0            403935.0   
+10                               24855.0      23973.0            641865.0   
+11                               20462.0      18742.0            494795.0   
+12                               16088.0      14562.0            218994.0   
+13                                7883.0       7009.0            119874.0   
+14                               26094.0      19477.0            314790.0   
+15                              263849.0    6061429.0            804596.0   
+
+    Wheat Allocated(kg)  Rice Distributed(kg)  Wheat Distributed(kg)  \
+3                   0.0              202605.0                   10.0   
+4                   0.0              929999.0                   26.0   
+5              180004.0              246481.0               164284.0   
+6              138990.0             1096477.0               125662.0   
+7               49830.0              825819.0                46736.0   
+8                   0.0              356640.0                    0.0   
+9                   0.0              387815.0                    0.0   
+10                  0.0              624765.0                    0.0   
+11                  0.0              461540.0                    0.0   
+12             145996.0              203148.0               135422.0   
+13              79916.0              108201.0                72034.0   
+14             209860.0              248239.0               165226.0   
+15            5691729.0              709400.0              6866025.0   
+
+    Total Allocation  Total Distributed  Distribution %  
+3           222945.0          202605.00           90.88  
+4           975320.0          929999.00           95.35  
+5           450010.0          246481.00           54.77  
+6          1298690.0         1096477.00           84.43  
+7           914655.0          825819.00           90.29  
+8           374380.0          356640.00           95.26  
+9           403935.0          387815.00           96.01  
+10          641865.0          624765.00           97.34  
+11          494795.0          461540.00           93.28  
+12          364990.0          203148.00           55.66  
+13          199790.0          108201.00           54.16  
+14          524650.0          248239.00           47.32  
+15         6401129.0              93.23             NaN  </pre></details></div></div></section><section class="notebook-cell" id="cell-14"><div class="cell-label"><a href="#cell-14">CELL 14</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">import seaborn as sns 
+</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-15"><div class="cell-label"><a href="#cell-15">CELL 15</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">sns.barplot(y = &#x27;Total Distributed&#x27; , x = &#x27;Block Name&#x27;,data=df2)</pre><div class="cell-output"><details><summary>Saved error from the original run</summary><pre>ValueError: Could not interpret input &#x27;Total Allocation &#x27;</pre></details></div></div></section><section class="notebook-cell" id="cell-16"><div class="cell-label"><a href="#cell-16">CELL 16</a><br>PYTHON</div><div class="cell-body"><pre class="code-source"></pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-17"><div class="cell-label"><a href="#cell-17">CELL 17</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">import openpyxl as opx 
+wb = opx.load_workbook(&quot;Bokaro.xlsx&quot;)</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-18"><div class="cell-label"><a href="#cell-18">CELL 18</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">wb</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>&lt;openpyxl.workbook.workbook.Workbook at 0x231354a1a60&gt;</pre></details></div></div></section><section class="notebook-cell" id="cell-19"><div class="cell-label"><a href="#cell-19">CELL 19</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">sheet = wb[&#x27;Block wise Transaction Report&#x27;]</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-20"><div class="cell-label"><a href="#cell-20">CELL 20</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">for r in sheet.columns:
+    for cell in r:
+        print(cell.value)</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-21"><div class="cell-label"><a href="#cell-21">CELL 21</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">import pandas as pd
+ 
+dataframe1 = pd.read_excel(&#x27;Bokaro.xlsx&#x27;)
+ 
+print(dataframe1)</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-22"><div class="cell-label"><a href="#cell-22">CELL 22</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">df = pd.DataFrame(sheet.values)</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-23"><div class="cell-label"><a href="#cell-23">CELL 23</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">df</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>                   0                                            1          2   \
+0   District : BOKARO                                         None       None   
+1               Sl No                                   Block Name  HHD Count   
+2                None                                         None       None   
+3                None                                         None       None   
+4                   1                                  BERMO BERMO         53   
+5                   2                  CHANDANKIYARI CHANDANKIYARI        236   
+6                   3                      CHANDRAPURA CHANDRAPURA         83   
+7                   4                                    CHAS CHAS        288   
+8                   5                                  GOMIA GOMIA        199   
+9                   6                              JARIDIH JARIDIH         87   
+10                  7                                KASMAR KASMAR         76   
+11                  8                              NAWADIH NAWADIH        106   
+12                  9                            PETERWAR PETERWAR        114   
+13                 10  CHAS NAGAR PALIKA(MN) CHAS NAGAR PALIKA(MN)         92   
+14                 11                      Phusro (NA) Phusro (NA)         67   
+15                 12  Bokaro Steel City(TA) Bokaro Steel City(TA)        222   
+16              Total                                         None       1623   
+
+                      3            4          5       6            7       8   \
+0                   None         None       None    None         None    None   
+1      Beneficiary Count  Transaction  Allocated    None  Distributed    None   
+2   (PH Card + AAY Card)         None       Rice   Wheat         Rice   Wheat   
+3                   None         None       (Kg)    (Kg)         (Kg)    (Kg)   
+4                   9595         8501     222945       0       202605      10   
+5                  39358        36710     975320       0       929999      26   
+6                  19452        17270     270006  180004       246481  164284   
+7                  58037        53249    1159700  138990      1096477  125662   
+8                  36055        34021     864825   49830       825819   46736   
+9                  15784        14769     374380       0       356640       0   
+10                 16459        15566     403935       0       387815       0   
+11                 24855        23973     641865       0       624765       0   
+12                 20462        18742     494795       0       461540       0   
+13                 16088        14562     218994  145996       203148  135422   
+14                  7883         7009     119874   79916       108201   72034   
+15                 26094        19477     314790  209860       248239  165226   
+16                290122       263849    6061429  804596      5691729  709400   
+
+                  9                  10                11  
+0               None               None              None  
+1   Total Allocation  Total Distributed  Distribution (%)  
+2               None               None              None  
+3               None               None              None  
+4             222945             202605             90.88  
+5             975320             929999             95.35  
+6             450010             246481             54.77  
+7            1298690            1096477             84.43  
+8             914655             825819             90.29  
+9             374380             356640             95.26  
+10            403935             387815             96.01  
+11            641865             624765             97.34  
+12            494795             461540             93.28  
+13            364990             203148             55.66  
+14            199790             108201             54.16  
+15            524650             248239             47.32  
+16           6866025            6401129             93.23  </pre></details></div></div></section><section class="notebook-cell" id="cell-24"><div class="cell-label"><a href="#cell-24">CELL 24</a><br>PYTHON</div><div class="cell-body"><pre class="code-source"></pre><div class="cell-output"></div></div></section></div></main><footer class="footer"><div class="wrap footer-inner"><span>Vaibhav Agarwal · BA Economics · Azim Premji University</span><span>Questions, evidence, interpretation. &nbsp; <a href="../../index.html#work">Back to the work ↑</a></span></div></footer>
+<dialog class="dialog" id="zoom-dialog" aria-labelledby="zoom-title"><div class="dialog-head"><h2 id="zoom-title">A closer look</h2><button type="button" data-close>Close ×</button></div><img id="zoom-image" class="zoom-image" alt=""><p id="zoom-caption" class="zoom-caption"></p></dialog>
+</body></html>
