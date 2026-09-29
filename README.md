@@ -1,7 +1,5 @@
 # 2020–2023 Portfolio
 
-**Vaibhav Agarwal · BA Economics · Azim Premji University**
-
 A selection of my papers, notebooks and visual projects from 2020–2023.
 
 [View the portfolio](https://econvaibhav.github.io/2020-2023-Portfolio/) · [Browse projects](#projects)
