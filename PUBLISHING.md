@@ -1,68 +1,48 @@
-# Open and publish the portfolio
+# Editing the portfolio
 
-The folder is a complete Git repository, including its `.git` directory. Keep that hidden directory when extracting or moving it. The website is already built; no package installation is required to view it.
+## Preview
 
-## View it on your computer
+Open `index.html` in a browser. The site works without an internet connection or an installation.
 
-Open `index.html` in a browser. Alternatively, from this folder:
+Alternatively, serve this folder locally:
 
 ```bash
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8000`. Keep the terminal open while browsing. Stop the server with `Ctrl+C`.
+Open `http://127.0.0.1:8000`. Stop the server with `Ctrl+C`.
 
-## Publish a new repository
+## Change a description
 
-Create an **empty** GitHub repository named **2020-2023-Portfolio**. Leave the automatic README, `.gitignore` and licence options off so the new remote does not have a separate initial commit.
+Edit `catalogue/projects.json`. Each entry contains its title, short card description, project description, tags, file records and credits. The `categories` field controls the Papers, Code and Visual work filters. A project can appear in more than one category.
 
-From this extracted folder, check the supplied history:
-
-```bash
-git status
-git log --oneline --reverse
-```
-
-Replace `YOUR-USERNAME` below with the account that owns the new repository:
-
-```bash
-git remote add origin https://github.com/YOUR-USERNAME/2020-2023-Portfolio.git
-git push -u origin main
-```
-
-This pushes the supplied commit history as well as the files. Uploading the visible files through the GitHub website does not transfer the local history. Do not run `git init` again or remove `.git`.
-
-The repository uses the GitHub noreply author address found on the existing EU-Political-NER repository. Check your own identity settings before making future commits.
-
-If a remote called `origin` already exists, inspect it with `git remote -v` before changing anything. These instructions are for a new empty remote, not for overwriting an existing repository. No force-push is needed.
-
-## Enable the portfolio website
-
-In the new repository, open **Settings → Pages**. Under **Build and deployment**, choose:
-
-- **Source:** Deploy from a branch
-- **Branch:** `main`
-- **Folder:** `/ (root)`
-
-Save the settings. GitHub will show the published website address on that page after deployment. Add that address to the repository’s **About → Website** field. The root `index.html` and `.nojekyll` are already included.
-
-Official instructions: [Configure a publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-
-## Update the content
-
-Edit project titles, descriptions, reading guides and credits in `catalogue/projects.json`, then rebuild:
+Rebuild the pages and run the checks:
 
 ```bash
 python3 tools/build_portfolio.py
 python3 -m unittest discover -s tests -v
 ```
 
-The generator updates the landing page, root README, individual project pages, project READMEs and static notebook readers. It does not modify or execute the source PDFs or notebooks. Styling and interactions live in `assets/portfolio.css` and `assets/portfolio.js`.
+The build updates `index.html`, the root README, each project page and README, and the notebook readers. Edit the catalogue or `tools/build_portfolio.py` rather than those generated files. Styling and interactions are in `assets/portfolio.css` and `assets/portfolio.js`.
 
-The source-file records include SHA-256 digests so tests can detect accidental changes to original artifacts. If you intentionally replace a source file, update its record and verify the change. Image previews and the screenshot in the README are separate static assets.
+The README screenshot, `assets/portfolio-preview.jpg`, is a static image. Replace it after a substantial visual change.
 
-## About the notebooks
+## Update the existing repository
 
-The HTML readers show the original cell order, code, saved PNG figures and text outputs. They do not execute notebook HTML or JavaScript. Use the original `.ipynb` files for interactive outputs.
+From your local repository, review and commit the changes:
 
-The coursework notebooks have not been rerun against live services. Their project pages explain missing inputs and implementation-specific issues. The automated checks validate portfolio structure, links, source integrity and notebook format; they do not certify the original analyses.
+```bash
+git status
+git diff --stat
+git add README.md PUBLISHING.md index.html assets catalogue projects tools tests
+git commit -m "portfolio: cut the extra text and simplify the project pages"
+git push
+```
+
+There is no need to create a new repository, remove `.git`, or force-push. Keep your existing Pages settings. The site files are built into the repository root.
+
+## Original files
+
+The PDFs and notebooks are not modified or executed by the build. Their file records include SHA-256 checksums so the tests can detect accidental changes. If you intentionally replace a source file, update its record too.
+
+The notebook readers show saved code, text and PNG outputs. They do not execute notebook HTML or JavaScript. Live services and missing notebook inputs have not been retested; the relevant project pages include short file notes.

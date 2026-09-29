@@ -49,9 +49,13 @@ class PortfolioTests(unittest.TestCase):
         self.assertEqual(len(ids), len(set(ids)))
         self.assertEqual(len(self.artifacts), 20)
         for p in PROJECTS:
-            for key in ('question','method_question','substance','methods','argument','bridge','scope','credits'):
+            for key in ('title','short','description','credits'):
                 self.assertTrue(p[key].strip(), f"Missing {key} in {p['id']}")
             self.assertTrue(set(p['related']).issubset(ids))
+            self.assertTrue(set(p['categories']).issubset({'papers', 'code', 'visuals'}))
+            self.assertTrue(p['tags'])
+            self.assertLessEqual(len(p['short'].split()), 35)
+            self.assertLessEqual(len(p['description'].split()), 80)
 
     def test_02_original_artifact_integrity(self):
         for path, record in self.artifacts.items():
@@ -95,7 +99,7 @@ class PortfolioTests(unittest.TestCase):
             folder = ROOT / 'projects' / p['id']
             self.assertTrue((folder / 'README.md').is_file())
             page = (folder / 'index.html').read_text(encoding='utf-8')
-            for marker in ('01 / Substance','02 / Methods','What the work brings out','The connection','Read the work'):
+            for marker in ('project-description','project-media','project-files','More projects'):
                 self.assertIn(marker, page)
             if any(f['kind'] == 'Notebook' for f in p['files']):
                 self.assertTrue((folder / 'notebook.html').is_file())
@@ -118,17 +122,14 @@ class PortfolioTests(unittest.TestCase):
                 if urlsplit(href).scheme in ('http','https'):
                     self.fail(f'Unexpected network dependency in generated page: {path}: {href}')
 
-    def test_08_reading_guides_reference_the_evidence(self):
+    def test_08_previews_reference_original_files(self):
         for p in PROJECTS:
             files = {f['name']: f for f in p['files']}
-            for item in p['inspect']:
-                self.assertIn(item['file'], files)
-                self.assertTrue(1 <= item['page'] <= files[item['file']]['pages'])
-            a = p['argument_source']
-            self.assertIn(a['file'], files)
-            size = files[a['file']].get('pages',files[a['file']].get('cells'))
-            self.assertTrue(1 <= a['page'] <= size)
-            self.assertTrue((ROOT/'assets/previews'/p['preview']['image']).exists())
+            preview = p['preview']
+            self.assertIn(preview['file'], files)
+            if preview['page']:
+                self.assertTrue(1 <= preview['page'] <= files[preview['file']]['pages'])
+            self.assertTrue((ROOT/'assets/previews'/preview['image']).exists())
 
     def test_09_markdown_file_links(self):
         for path in [ROOT/'README.md', ROOT/'PUBLISHING.md', *ROOT.glob('projects/*/README.md')]:
@@ -149,6 +150,24 @@ class PortfolioTests(unittest.TestCase):
         before = {p: hashlib.sha256(p.read_bytes()).hexdigest() for p in generated}
         subprocess.run([sys.executable, str(ROOT/'tools/build_portfolio.py')], check=True, capture_output=True)
         self.assertEqual(before, {p: hashlib.sha256(p.read_bytes()).hexdigest() for p in generated})
+
+    def test_12_removed_sections_are_not_generated(self):
+        old_copy = ('Questions first', 'Methods that follow', 'What the work brings out',
+                    'The connection', '01 / Substance', '02 / Methods', 'data-lens',
+                    'compare-dialog', 'compare-tray', 'thought-line', 'argument-panel')
+        for path in [ROOT/'index.html', ROOT/'README.md',
+                     *ROOT.glob('projects/*/index.html'), *ROOT.glob('projects/*/README.md')]:
+            text = path.read_text(encoding='utf-8')
+            for phrase in old_copy:
+                self.assertNotIn(phrase, text, f'{phrase} is still in {path}')
+
+    def test_13_filter_categories_match_the_files(self):
+        for p in PROJECTS:
+            is_code = any(f['kind'] == 'Notebook' for f in p['files'])
+            self.assertEqual(is_code, 'code' in p['categories'])
+        page = (ROOT/'index.html').read_text(encoding='utf-8')
+        self.assertEqual(page.count('class="project-card"'), len(PROJECTS))
+        self.assertEqual(page.count('data-category='), 4)
 
 if __name__ == '__main__':
     unittest.main()

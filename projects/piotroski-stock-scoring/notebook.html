@@ -1,12 +1,29 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Turning a financial idea into rules / Notebook · Vaibhav Agarwal</title><meta name="description" content="The original notebook, readable without execution.">
-<meta name="theme-color" content="#f8f7f3"><meta name="color-scheme" content="light">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Financial-scoring notebook · Vaibhav Agarwal</title>
+<meta name="description" content="A group Python notebook that retrieves company statements and calculates a Piotroski-style financial score.">
+<meta name="theme-color" content="#f8f7f3">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/portfolio.css"><script src="../../assets/portfolio.js" defer></script>
-</head><body><a class="skip" href="#main">Skip to content</a>
-<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../index.html"><span class="brand-name">Vaibhav Agarwal</span><span class="brand-year">2020–2023</span></a>
-<nav aria-label="Main navigation"><a href="../../index.html#work">Work</a><a href="../../index.html#gallery">Gallery</a><a class="nav-atlas" href="../../index.html#connections">Connections</a><a href="../../index.html#about">About</a></nav></div></header><main id="main" class="wrap"><div class="reader-header"><p class="breadcrumb"><a href="index.html">← Turning a financial idea into rules</a></p><p class="eyebrow">Original notebook / 29 cells</p><h1>Inside the work.</h1><p>This reader preserves the original cell order, code, stored text and PNG outputs. It does not run code or replay active HTML and Plotly outputs. Saved errors remain available to inspect. For the complete notebook, including interactive outputs, use the file below.</p><p><a href="piotroski-score.ipynb" download="">Download the original .ipynb</a></p><div class="reader-controls js-only js-flex"><button data-reader-toggle="code" aria-pressed="true">Hide code</button><button data-reader-toggle="output" aria-pressed="true">Hide saved outputs</button></div></div><div class="reader"><section class="notebook-cell" id="cell-1"><div class="cell-label"><a href="#cell-1">CELL 01</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">### **GROUP PROJECT - VAIBHAV, HAMI AND ABHINAV**</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-2"><div class="cell-label"><a href="#cell-2">CELL 02</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">The Piotroski score is a discrete score between zero and nine that reflects nine criteria used to determine the strength of a firm&#x27;s financial position. If a company has a score of 8 or 9, it is considered a good value. If the score adds up to between 0-2 points, the stock is considered weak.</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-3"><div class="cell-label"><a href="#cell-3">CELL 03</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">Profitability Criteria Include: 
+<link rel="stylesheet" href="../../assets/portfolio.css">
+<script src="../../assets/portfolio.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap topbar-inner">
+<a class="brand" href="../../index.html"><span class="brand-name">Vaibhav Agarwal</span><span class="brand-year">2020–2023</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html#work">Projects</a><a href="../../index.html#gallery">Gallery</a><a href="../../index.html#about">About</a></nav>
+</div></header>
+
+<main id="main" class="wrap">
+<div class="reader-header"><p class="breadcrumb"><a href="index.html">← Piotroski stock scoring</a></p><h1>Financial-scoring notebook</h1>
+<p>29 cells · Code and saved outputs. This view does not execute the notebook.</p>
+<p><a href="piotroski-score.ipynb" download="">Download .ipynb ↓</a></p>
+<div class="reader-controls js-only"><button type="button" data-reader-toggle="code" aria-pressed="true">Hide code</button><button type="button" data-reader-toggle="output" aria-pressed="true">Hide saved outputs</button></div></div>
+<div class="reader"><section class="notebook-cell" id="cell-1"><div class="cell-label"><a href="#cell-1">CELL 01</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">### **GROUP PROJECT - VAIBHAV, HAMI AND ABHINAV**</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-2"><div class="cell-label"><a href="#cell-2">CELL 02</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">The Piotroski score is a discrete score between zero and nine that reflects nine criteria used to determine the strength of a firm&#x27;s financial position. If a company has a score of 8 or 9, it is considered a good value. If the score adds up to between 0-2 points, the stock is considered weak.</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-3"><div class="cell-label"><a href="#cell-3">CELL 03</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">Profitability Criteria Include:&#32;
 
 Positive net income (1 point)
 
@@ -49,9 +66,9 @@ tickerdict={&quot;Amazon&quot; : &quot;AMZN&quot; , &quot;Microsoft&quot; : &quo
 print(&quot;These are some examples of companies with their Tickers(Symbols).&quot;)
 print(tickerdict)
 
-# Using the stock of Microsoft for this example. 
+# Using the stock of Microsoft for this example.&#32;
 tick = &#x27;MSFT&#x27;
-s = yf.Ticker(tick) </pre><div class="cell-output"><details><summary>Saved text output</summary><pre>These are some examples of companies with their Tickers(Symbols).
+s = yf.Ticker(tick)&#32;</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>These are some examples of companies with their Tickers(Symbols).
 {&#x27;Amazon&#x27;: &#x27;AMZN&#x27;, &#x27;Microsoft&#x27;: &#x27;MSFT&#x27;, &#x27;APPLE&#x27;: &#x27;AAPL&#x27;, &#x27;TESLA&#x27;: &#x27;TSLA&#x27;, &#x27;ALPHABET(GOOGLE)&#x27;: &#x27;GOOG&#x27;, &#x27;FACEBOOK&#x27;: &#x27;FB&#x27;, &#x27;JPMORGAN CHASE&#x27;: &#x27;JPM&#x27;}
 </pre></details></div></div></section><section class="notebook-cell" id="cell-6"><div class="cell-label"><a href="#cell-6">CELL 06</a><br>PYTHON</div><div class="cell-body"><pre class="code-source"># Assigning the value of 0 to the Piotroski score so that we can increase it when the stocks provide positive results based on the indicators.
 # Assigning cash flow, finances and balances to thier respective items so it is easier to print the tables in the future
@@ -90,20 +107,20 @@ Accounts Payable                  1.516300e+10  ...  8.617000e+09
 [26 rows x 4 columns]</pre></details></div></div></section><section class="notebook-cell" id="cell-8"><div class="cell-label"><a href="#cell-8">CELL 08</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">cfoa = cashflow.iloc[11,0] #Cashflow from operating activities for the recent quarter
 ni = finances.iloc[4,0] #Net Income for the recent quarter
 ta = balances.iloc[4,0] #Total Assets as at recent quarter end
-ltdc = balances.iloc[23,0] # This is the long term debt of the current year 
-ltdp = balances.iloc[23,1]  # This is the long term debt of the previous year 
+ltdc = balances.iloc[23,0] # This is the long term debt of the current year&#32;
+ltdp = balances.iloc[23,1]  # This is the long term debt of the previous year&#32;
 ca = balances.iloc[18,0] #This is the current assets of the present year
 cl = balances.iloc[13,0] #This is the current liabilities of the present year
 pca = balances.iloc[18,1] # This this the current assets of the previous year
 pcl = balances.iloc[13,1]# This this the current liabilities of the previous year
-stockpy = s.cashflow.iloc[6,1] # Stocks issued in the previous year 
+stockpy = s.cashflow.iloc[6,1] # Stocks issued in the previous year&#32;
 stockcy = cashflow.iloc[6,0] # Stocks issued in the current year
-tr = finances.iloc[15,0] # Total revenue of the current year 
-cr = finances.iloc[17,0] #Cost of revenue for current year 
-trpy = finances.iloc[15,1]# Total revenue for previous year 
-crpy = finances.iloc[17,1] # Cost of revenue for previous year  
-avg_assets = ((balances.iloc[5,0] + balances.iloc[5,1])/2) # Average assets of the current year 
-avg_assetspy = ((balances.iloc[5,0] + balances.iloc[5,1])/2)# Average assets of the previous year </pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-9"><div class="cell-label"><a href="#cell-9">CELL 09</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**1) NET INCOME :** 
+tr = finances.iloc[15,0] # Total revenue of the current year&#32;
+cr = finances.iloc[17,0] #Cost of revenue for current year&#32;
+trpy = finances.iloc[15,1]# Total revenue for previous year&#32;
+crpy = finances.iloc[17,1] # Cost of revenue for previous year&#32;&#32;
+avg_assets = ((balances.iloc[5,0] + balances.iloc[5,1])/2) # Average assets of the current year&#32;
+avg_assetspy = ((balances.iloc[5,0] + balances.iloc[5,1])/2)# Average assets of the previous year&#32;</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-9"><div class="cell-label"><a href="#cell-9">CELL 09</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**1) NET INCOME :**&#32;
 This shows the income of the company for the recent quarter. If the figure is greater than 0 than it indicates that the comapnay is making profits and its performace currently is good impliying that the future performace may also be good and hence a positive indicator if the net income is increasing every year.
 </pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-10"><div class="cell-label"><a href="#cell-10">CELL 10</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">if ni&gt;0:
   print(&quot;The income of the company for the recent quarter are positive which indicates that the company is not performing poorly&quot;)
@@ -113,7 +130,7 @@ else:
 </pre></details></div></div></section><section class="notebook-cell" id="cell-11"><div class="cell-label"><a href="#cell-11">CELL 11</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**2) RETURN ON ASSETS** :
 Return on assets (ROA) is an indicator of how profitable a company is relative to its total assets. ROA gives a manager, investor, or analyst an idea as to how efficient a company&#x27;s management is at using its assets to generate earnings.
 
-The higher the ROA, the better it is for the company. </pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-12"><div class="cell-label"><a href="#cell-12">CELL 12</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">roa = ni/ta #The return on assets ratio
+The higher the ROA, the better it is for the company.&#32;</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-12"><div class="cell-label"><a href="#cell-12">CELL 12</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">roa = ni/ta #The return on assets ratio
 print(&quot;The return on assets for the company is: &quot; ,roa)
 if roa&gt;0:
   print(&quot;The return on assets ratio for the company is positive which implies the company is using its assets efficiently to generate net income.&quot;)
@@ -126,8 +143,8 @@ The return on assets ratio for the company is positive which implies the company
   pscore+=1
 else:
   print(&quot;The cash flow of the company from operating activities for the recent quarter is negative which indicates that the company is not liquid from its operating activities(does not earn cash)&quot;)</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>The cash flow of the company from operating activities for the recent quarter is positive which indicates that the company is liquid from its operating activities(earns cash)
-</pre></details></div></div></section><section class="notebook-cell" id="cell-15"><div class="cell-label"><a href="#cell-15">CELL 15</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**4) CASH FLOW VS NET INCOME** 
-Cash flow refers to the net amount of cash and cash equivalents being transferred in and out of a company. 
+</pre></details></div></div></section><section class="notebook-cell" id="cell-15"><div class="cell-label"><a href="#cell-15">CELL 15</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**4) CASH FLOW VS NET INCOME**&#32;
+Cash flow refers to the net amount of cash and cash equivalents being transferred in and out of a company.&#32;
 
 Net income (NI), also called net earnings, is calculated as sales minus cost of goods sold, selling, general and administrative expenses, operating expenses, depreciation, interest, taxes, and other expenses
 
@@ -136,7 +153,7 @@ If the cash flow is greater than the net income than it shows that the company h
   pscore+=1
 else:
   print(&quot;The Company&#x27;s Cashflow from Operating Activities for the recent quarter has been less than its net income for the same period which does not indicate a good quality of earnings and a scope for improvement.&quot;)</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>The Company&#x27;s Cashflow from Operating Activities for the recent quarter has been greater than its net income for the same period which indicates a good quality of earnings.
-</pre></details></div></div></section><section class="notebook-cell" id="cell-17"><div class="cell-label"><a href="#cell-17">CELL 17</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**5) Lower amount of long term debt in the current period, compared to the previous year** : Long-term debt is debt that matures in more than one year. Long-term debt can be viewed from two perspectives: financial statement reporting by the issuer and financial investing.  
+</pre></details></div></div></section><section class="notebook-cell" id="cell-17"><div class="cell-label"><a href="#cell-17">CELL 17</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**5) Lower amount of long term debt in the current period, compared to the previous year** : Long-term debt is debt that matures in more than one year. Long-term debt can be viewed from two perspectives: financial statement reporting by the issuer and financial investing.&#32;&#32;
 
 
 If the long term debt has been reducing for many years it indicates financial stability in the company and the comapnies ability to pay its dues time and hence is a positive indicator.</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-18"><div class="cell-label"><a href="#cell-18">CELL 18</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">if (ltdp-ltdc) &gt; 0 :
@@ -164,9 +181,9 @@ if newshares &lt;= 0:
   pscore += 1
 else:
   print(&quot;New stocks were added which is not a good indicator&quot;)</pre><div class="cell-output"><details><summary>Saved text output</summary><pre>New stocks were added which is not a good indicator
-</pre></details></div></div></section><section class="notebook-cell" id="cell-23"><div class="cell-label"><a href="#cell-23">CELL 23</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**8) Gross Margin** :Gross margin is net sales less the cost of goods sold (COGS). In other words, it&#x27;s the amount of money a company retains after incurring the direct costs associated with producing the goods it sells and the services it provides. 
+</pre></details></div></div></section><section class="notebook-cell" id="cell-23"><div class="cell-label"><a href="#cell-23">CELL 23</a><br>MARKDOWN</div><div class="cell-body"><pre class="markdown-source">**8) Gross Margin** :Gross margin is net sales less the cost of goods sold (COGS). In other words, it&#x27;s the amount of money a company retains after incurring the direct costs associated with producing the goods it sells and the services it provides.&#32;
 
-If the gross margin increases then it is good for the company as it indicates that the comapany is making for profits and might continue to do so. </pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-24"><div class="cell-label"><a href="#cell-24">CELL 24</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">grossmargin= tr-cr
+If the gross margin increases then it is good for the company as it indicates that the comapany is making for profits and might continue to do so.&#32;</pre><div class="cell-output"></div></div></section><section class="notebook-cell" id="cell-24"><div class="cell-label"><a href="#cell-24">CELL 24</a><br>PYTHON</div><div class="cell-body"><pre class="code-source">grossmargin= tr-cr
 print(&#x27;Gross Margin this year= &#x27; +str(grossmargin))
 grossmargin_py = trpy-crpy
 print(&#x27;Gross Margin previous year= &#x27; +str(grossmargin_py))
@@ -212,6 +229,11 @@ https://www.investopedia.com
 
 3) Pandas Documentation
 https://pandas.pydata.org
-</pre><div class="cell-output"></div></div></section></div></main><footer class="footer"><div class="wrap footer-inner"><span>Vaibhav Agarwal · BA Economics · Azim Premji University</span><span>Questions, evidence, interpretation. &nbsp; <a href="../../index.html#work">Back to the work ↑</a></span></div></footer>
-<dialog class="dialog" id="zoom-dialog" aria-labelledby="zoom-title"><div class="dialog-head"><h2 id="zoom-title">A closer look</h2><button type="button" data-close>Close ×</button></div><img id="zoom-image" class="zoom-image" alt=""><p id="zoom-caption" class="zoom-caption"></p></dialog>
+</pre><div class="cell-output"></div></div></section></div></main>
+
+<footer class="footer"><div class="wrap footer-inner"><span>Vaibhav Agarwal · BA Economics · Azim Premji University</span><a href="../../index.html#work">All projects ↑</a></div></footer>
+<dialog class="dialog" id="zoom-dialog" aria-labelledby="zoom-title">
+<div class="dialog-head"><h2 id="zoom-title">Image preview</h2><button type="button" data-close>Close ×</button></div>
+<img id="zoom-image" class="zoom-image" alt=""><p id="zoom-caption" class="zoom-caption"></p>
+</dialog>
 </body></html>

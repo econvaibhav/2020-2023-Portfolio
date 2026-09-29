@@ -1,20 +1,46 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Turning a financial idea into rules · Vaibhav Agarwal</title><meta name="description" content="Accounting concepts made explicit as data retrieval, ratios and conditional Python logic.">
-<meta name="theme-color" content="#f8f7f3"><meta name="color-scheme" content="light">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piotroski stock scoring · Vaibhav Agarwal</title>
+<meta name="description" content="A group Python notebook that retrieves company statements and calculates a Piotroski-style financial score.">
+<meta name="theme-color" content="#f8f7f3">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../../assets/portfolio.css"><script src="../../assets/portfolio.js" defer></script>
-</head><body><a class="skip" href="#main">Skip to content</a>
-<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../../index.html"><span class="brand-name">Vaibhav Agarwal</span><span class="brand-year">2020–2023</span></a>
-<nav aria-label="Main navigation"><a href="../../index.html#work">Work</a><a href="../../index.html#gallery">Gallery</a><a class="nav-atlas" href="../../index.html#connections">Connections</a><a href="../../index.html#about">About</a></nav></div></header>
+<link rel="stylesheet" href="../../assets/portfolio.css">
+<script src="../../assets/portfolio.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="wrap topbar-inner">
+<a class="brand" href="../../index.html"><span class="brand-name">Vaibhav Agarwal</span><span class="brand-year">2020–2023</span></a>
+<nav aria-label="Main navigation"><a href="../../index.html#work">Projects</a><a href="../../index.html#gallery">Gallery</a><a href="../../index.html#about">About</a></nav>
+</div></header>
+
 <main id="main" class="wrap">
-<section class="case-hero"><p class="breadcrumb"><a href="../../index.html#work">Selected work</a> / 10</p><p class="eyebrow">Economic ideas in code</p><h1>Turning a financial idea into rules</h1><p class="case-deck">How can a financial framework become an inspectable sequence of calculations?</p><div class="hero-actions"><a class="button dark" href="#evidence">Open the work <span>↓</span></a><span><span class="tag">Python</span> <span class="tag">Rule-based scoring</span> <span class="tag">Data retrieval</span></span></div></section>
-<section class="case-layout" aria-label="Substance and methods"><div class="case-lenses"><article><p class="eyebrow">01 / Substance</p><h2>The question behind the work</h2><p>This group notebook translates a Piotroski-style financial scoring idea into Python. It gives an early example of turning a framework learned in economics and finance into explicit calculations that another reader can follow.</p></article><article><p class="eyebrow">02 / Methods</p><h2>Where do data retrieval, accounting definitions and program logic meet?</h2><p>yfinance retrieves company statements; pandas-style positional indexing extracts entries; ratios and comparisons contribute to an accumulated score. Markdown explanations sit beside the corresponding Python calculations.</p></article></div><figure class="case-visual"><a href="../../assets/previews/scoring.jpg" data-zoom data-caption="Original cash-flow comparison code from the group notebook."><img class="" src="../../assets/previews/scoring.jpg" alt="A typeset excerpt of a cash-flow rule and score increment from the original Python notebook." loading="lazy" decoding="async"></a><figcaption>Original cash-flow comparison code from the group notebook. &nbsp; <a href="notebook.html">Open the source ↗</a></figcaption></figure></section>
-<section class="argument-panel"><p class="eyebrow">Read for the argument</p><h2>What the work brings out</h2><p>The notebook places explanations of accounting concepts beside the exact conditions that increment the score. This is the part to inspect: the financial judgement has been decomposed into smaller rules, so disagreements can be traced to a definition, a data entry or a calculation.</p><a class="argument-source" href="notebook.html#cell-16">Read it in the original · cell 16 ↗</a></section>
-<section class="bridge"><h2>The connection</h2><p>The interesting transition is from an informal judgement to a rule. Once that rule is written in code, its definitions, assumptions and implementation become visible and open to checking.</p></section>
-<section class="section"><p class="eyebrow">From question to evidence</p><h2 style="margin-top:12px">How the work is put together</h2><div class="work-steps"><div class="work-step"><span class="number">01</span>Choose a ticker and retrieve its financial statements.</div><div class="work-step"><span class="number">02</span>Extract accounting entries and construct ratios.</div><div class="work-step"><span class="number">03</span>Apply a sequence of binary conditions to an accumulated score.</div><div class="work-step"><span class="number">04</span>Print the result alongside explanations of the individual calculations.</div></div></section>
-<section class="section" id="evidence"><div class="evidence-layout"><div><p class="eyebrow">Original artifacts</p><h2 style="margin-top:12px">Read the work</h2><ul class="artifact-list"><li><div><a href="notebook.html">Read the notebook in your browser</a><br><a href="piotroski-score.ipynb" class="read-link" download="">Original .ipynb</a></div><small>29 cells · Python notebook</small></li></ul><p class="source-meta">The original documents and notebooks are kept alongside this project page. Page references count from the first PDF page, including covers.</p></div><div><p class="eyebrow">A way in</p><h2 style="margin-top:12px">Where to look first</h2><div class="reading-guide"><div><a href="notebook.html">Read the original cells and saved outputs ↗</a><p>The browser reader shows code, stored text and PNG figures without running the notebook. Cell numbers provide stable reading landmarks.</p></div><div><a href="notebook.html#cell-8">Accounting entries · cell 8 ↗</a><p>The positional indexing on which the calculations depend.</p></div><div><a href="notebook.html#cell-16">Cash flow and score logic · cell 16 ↗</a><p>A concrete condition and score increment.</p></div></div></div></div><details class="scope"><summary>Scope, interpretation &amp; what is available</summary><p>This is a coursework implementation, not a validated canonical F-score or investment tool. Positional statement indexing is fragile; the notebook also reuses the same average-assets expression for both periods. Those implementation choices are preserved for inspection, not silently presented as verified finance logic. Live API execution has not been tested.</p></details><div class="credits"><strong>Credit.</strong> Group work by Vaibhav, Hami and Abhinav, as credited in the first notebook cell.</div></section>
-<section class="section"><p class="eyebrow">Keep following the question</p><div class="related"><a href="../public-distribution-scraping/index.html"><span class="eyebrow">Public-service data</span><h3>From a public webpage to a dataset ↗</h3><p>A compact Python pipeline for extracting, cleaning and structuring administrative tables.</p></a><a href="../replication-water-pricing/index.html"><span class="eyebrow">Incentives &amp; conservation</span><h3>Rebuilding the evidence on water pricing ↗</h3><p>Eight published tables approached as an exercise in empirical reasoning, not just table production.</p></a></div></section>
-</main><footer class="footer"><div class="wrap footer-inner"><span>Vaibhav Agarwal · BA Economics · Azim Premji University</span><span>Questions, evidence, interpretation. &nbsp; <a href="../../index.html#work">Back to the work ↑</a></span></div></footer>
-<dialog class="dialog" id="zoom-dialog" aria-labelledby="zoom-title"><div class="dialog-head"><h2 id="zoom-title">A closer look</h2><button type="button" data-close>Close ×</button></div><img id="zoom-image" class="zoom-image" alt=""><p id="zoom-caption" class="zoom-caption"></p></dialog>
+<header class="project-heading">
+<p class="breadcrumb"><a href="../../index.html#work">← All projects</a><span>10</span></p>
+<h1>Piotroski stock scoring</h1>
+<div class="tags"><span>Python</span><span>yfinance</span><span>Financial ratios</span></div>
+</header>
+<div class="project-detail">
+<figure class="project-media">
+<a href="../../assets/previews/scoring.jpg" data-zoom data-caption="Original cash-flow comparison code from the group notebook."><img src="../../assets/previews/scoring.jpg" alt="A typeset excerpt of a cash-flow rule and score increment from the original Python notebook." loading="eager" decoding="async"></a>
+<figcaption>Original cash-flow comparison code from the group notebook. <a href="notebook.html">Open file ↗</a></figcaption>
+</figure>
+<div class="project-info">
+<p class="project-description">A coursework implementation of Piotroski-style stock scoring. The notebook retrieves financial statements with yfinance and uses accounting ratios and conditional rules to build a score. Explanations sit alongside the corresponding Python calculations.</p>
+<section class="project-files" id="files"><h2>Files</h2><ul class="artifact-list"><li><div><a href="notebook.html">Financial-scoring notebook ↗</a><a href="piotroski-score.ipynb" download="" class="file-download">Download .ipynb</a></div><small>Python notebook</small></li></ul><p class="file-note">This is a coursework draft, not a validated F-score implementation. It uses positional statement indexing and repeats the same average-assets expression for both periods.</p></section>
+<p class="credits"><strong>By</strong> Vaibhav, Hami and Abhinav.</p>
+</div>
+</div>
+<section class="more-work"><h2>More projects</h2><div><a href="../public-distribution-scraping/index.html">Jharkhand PDS web scraping <span>↗</span></a><a href="../replication-water-pricing/index.html">Water-pricing replication <span>↗</span></a></div></section>
+</main>
+
+<footer class="footer"><div class="wrap footer-inner"><span>Vaibhav Agarwal · BA Economics · Azim Premji University</span><a href="../../index.html#work">All projects ↑</a></div></footer>
+<dialog class="dialog" id="zoom-dialog" aria-labelledby="zoom-title">
+<div class="dialog-head"><h2 id="zoom-title">Image preview</h2><button type="button" data-close>Close ×</button></div>
+<img id="zoom-image" class="zoom-image" alt=""><p id="zoom-caption" class="zoom-caption"></p>
+</dialog>
 </body></html>
