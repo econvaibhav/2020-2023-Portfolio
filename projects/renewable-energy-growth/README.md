@@ -6,9 +6,8 @@ This paper adds renewable-energy investment to an augmented Solow growth model. 
 
 Growth models · Regression · Cross-country data
 
-![Two original scatterplots relating growth and renewable-energy investment.](../../assets/previews/growth.jpg)
+![The emperical strategy used.](emp_eq.png)
 
-*Short-run comparisons from the research paper, p. 11.*
 
 ## Files
 
