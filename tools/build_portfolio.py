@@ -276,13 +276,17 @@ def main() -> None:
     for p in PROJECTS:
         path = ROOT / 'projects' / p['id']
         (path / 'index.html').write_text(project_page(p), encoding='utf-8')
-        (path / 'README.md').write_text(project_readme(p), encoding='utf-8')
+        readme = path / 'README.md'
+        if not readme.exists():
+            readme.write_text(project_readme(p), encoding='utf-8')
         for f in p['files']:
             if f['kind'] == 'Notebook':
                 (path / 'notebook.html').write_text(notebook_page(p, f), encoding='utf-8')
                 readers += 1
     (ROOT / 'index.html').write_text(root_page(), encoding='utf-8')
-    (ROOT / 'README.md').write_text(root_readme(), encoding='utf-8')
+    readme = ROOT / 'README.md'
+    if not readme.exists():
+        readme.write_text(root_readme(), encoding='utf-8')
     print(f'Built {len(PROJECTS)} project pages, {readers} notebook readers and the home page.')
 
 
